@@ -1,10 +1,6 @@
-#!/usr/bin/env python3
 """
-Extract CVSS 4.0 and 3.1 vector strings from the MITRE cvelistV5 repository.
-
-The script automatically **clones** the repository on first run and performs a
-**git pull** on subsequent runs, then parses the JSON files and writes results
-to *out.txt*. The entire cycle repeats every hour.
+Script to clone/pull the MITRE cvelistV5 repo, extract CVSS 4.0 and 3.1 vectors,
+and write them to out.txt every hour.
 """
 
 import os

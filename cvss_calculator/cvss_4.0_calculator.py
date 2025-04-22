@@ -4,12 +4,12 @@ Purpose   : CVSS 4.0 score calculation
 Last mod  : 2024‑01‑26 (Fri)
 
 CVSS 4.0 calculation procedure
-  1) Parse the CVSS vector
-  2) Calculate the base score
-  3) Determine the maximum value for each metric
-  4) Calculate the metric‑level severity score
-  5) Compute the average score‑reduction distance
-  6) Derive the final score
+1) Parse the CVSS vector
+2) Calculate the base score
+3) Determine the maximum value for each metric
+4) Calculate the metric‑level severity score
+5) Compute the average score‑reduction distance
+6) Derive the final score
 """
 
 # BASE_SCORE: CVSS 4.0 base scores (lookup table produced from the specification)
