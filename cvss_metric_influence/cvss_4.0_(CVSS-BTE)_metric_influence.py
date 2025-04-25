@@ -4,7 +4,7 @@ supplemental, environmental, and threat metrics—on the Base score.
 Runs combinations in parallel and prints a descending influence list.
 """
 from itertools import product
-from multiprocessing import Pool
+from multiprocessing import Pool, cpu_count
 from cvss import CVSS4
 
 # CVSS 4.0 metric value sets (CVSS-BTE)
@@ -55,7 +55,7 @@ def metric_influence(target: str) -> tuple[str, float]:
 
 
 if __name__ == "__main__":
-    with Pool() as pool:
+    with Pool(processes=cpu_count()) as pool:
         results = pool.map(metric_influence, METRICS.keys(), chunksize=1)
         
     for metric, influence in sorted(results, key=lambda x: x[1], reverse=True):
